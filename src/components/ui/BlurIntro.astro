@@ -1,0 +1,71 @@
+---
+
+---
+
+<div class='image-container'>
+    <img src='/src/assets/images/landing.jpg' alt='' class='bg-image' />
+    <div class='overlay'>
+        <div id='counter'>0%</div>
+    </div>
+</div>
+
+<style>
+    .image-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .bg-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: blur(50px);
+        will-change: filter;
+    }
+
+    .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: white;
+    }
+</style>
+
+<script>
+    import { animate } from 'motion';
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const imgEl = document.querySelector<HTMLImageElement>('.bg-image');
+        const overlayEl = document.querySelector<HTMLDivElement>('.overlay');
+        const counterEl = document.querySelector<HTMLDivElement>('#counter');
+
+        if (!imgEl || !overlayEl || !counterEl) return;
+
+        //Animation
+        animate(0, 100, {
+            duration: 2.5,
+            ease: 'easeInOut',
+            onUpdate: (latest) => {
+                counterEl.textContent = `${Math.round(latest)}%`;
+
+                //Blur update
+                const blurValue = Math.max(20 - latest / 5, 0);
+                imgEl.style.filter = `blur(${blurValue}px)`;
+
+                //Overlay update
+                const overlayOpacity = Math.max(0.6 - latest / 200, 0);
+                overlayEl.style.background = `rgba(0, 0, 0, ${overlayOpacity})`;
+            },
+            onComplete: () => {
+                counterEl.textContent = 'Bienvenue au Garage Vincent Parrot';
+                counterEl.style.fontSize = '3rem';
+            },
+        });
+    });
+</script>

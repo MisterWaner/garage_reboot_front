@@ -9,6 +9,9 @@ export default function Navbar() {
         setIsOpen(!isOpen);
     };
 
+    const currentPath =
+        typeof window !== 'undefined' ? window.location.pathname : '';
+
     const links: Link[] = [
         { href: '/', label: 'Accueil' },
         { href: '/mecanique', label: 'Mécanique' },
@@ -19,13 +22,28 @@ export default function Navbar() {
     ];
 
     return (
-        <nav className='text-white bg-black font-montserrat font-bold w-full '>
+        <nav className='text-slate-50 bg-black font-montserrat font-bold w-full '>
             <ul className='hidden lg:flex items-center justify-end w-full'>
-                {links.map((link) => (
-                    <li className='lg:mr-8' key={link.href}>
-                        <a href={link.href}>{link.label}</a>
-                    </li>
-                ))}
+                {links.map((link) => {
+                    const isActive =
+                        currentPath === link.href ||
+                        currentPath.startsWith(link.href + '/');
+                    return (
+                        <li className='lg:mr-8' key={link.href}>
+                            <a
+                                href={link.href}
+                                className={`relative after:absolute after:left-0 after:-bottom-0.5
+                            after:h-0.5 after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full ${
+                                isActive
+                                    ? 'after:w-full'
+                                    : 'after:w-0 hover:after:w-full'
+                            }`}
+                            >
+                                {link.label}
+                            </a>
+                        </li>
+                    );
+                })}
             </ul>
 
             <ul
