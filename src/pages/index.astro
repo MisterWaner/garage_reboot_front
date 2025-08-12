@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import logo from '/images/logo.png';
 import PublicLayout from '../layouts/PublicLayout.astro';
 import BlurIntro from '../components/ui/BlurIntro.astro';
 import '../styles/global.css';
@@ -6,6 +8,24 @@ import '../styles/global.css';
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<PublicLayout title="Garage Vincent Parrot">
-    <BlurIntro />
+<PublicLayout title='Garage Vincent Parrot'>
+    <BlurIntro slot='hero' />
+
+    <article id='about'>
+        <h2 class="text-2xl font-semibold font-montserrat mb-4">Découvrez notre <span class="underline underline-offset-4 decoration-red-500">univers</span>.</h2>
+        <section class="flex flex-col gap-4 md:flex-row items-center md:items-stretch font-roboto">
+            <Image src='/images/logo.png' width={500} height={500} alt='Logo Garage Vincent Parrot' class='md:w-64 rounded-lg' />
+            <p class="text-lg md:ml-10">
+                Chez Garage Vincent Parrot, nous croyons que l'automobile est
+                bien plus qu'un simple moyen de transport.<br/> C'est une passion,
+                une extension de votre vie et un symbole de liberté. Notre
+                équipe d'experts est là pour vous accompagner dans tous vos
+                projets automobiles, qu'il s'agisse de l'entretien de votre
+                véhicule, de la réparation de carrosserie ou de la
+                personnalisation de votre voiture. <br/>
+                <strong>Notre engagement :</strong> Vous offrir un service
+                de qualité, adapté à vos besoins et à votre budget.
+            </p>
+        </section>
+    </article>
 </PublicLayout>
