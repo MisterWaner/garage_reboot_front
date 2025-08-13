@@ -1,8 +1,11 @@
 ---
 import { Image } from 'astro:assets';
-import logo from '/images/logo.png';
+import mecanique from '/src/assets/images/mecanique.jpg';
+import carwash from '/src/assets/images/carwash.jpg';
+import route from '/src/assets/images/route.jpg';
 import PublicLayout from '../layouts/PublicLayout.astro';
 import BlurIntro from '../components/ui/BlurIntro.astro';
+import Carousel from '../components/Carousel/Carousel';
 import '../styles/global.css';
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -12,20 +15,120 @@ import '../styles/global.css';
     <BlurIntro slot='hero' />
 
     <article id='about'>
-        <h2 class="text-2xl font-semibold font-montserrat mb-4">Découvrez notre <span class="underline underline-offset-4 decoration-red-500">univers</span>.</h2>
-        <section class="flex flex-col gap-4 md:flex-row items-center md:items-stretch font-roboto">
-            <Image src='/images/logo.png' width={500} height={500} alt='Logo Garage Vincent Parrot' class='md:w-64 rounded-lg' />
-            <p class="text-lg md:ml-10">
+        <h2 class='text-2xl font-semibold font-montserrat mb-4'>
+            Découvrez notre <span
+                class='underline underline-offset-4 decoration-red-500'
+                >univers</span
+            >.
+        </h2>
+        <section
+            class='flex flex-col gap-4 md:flex-row items-center md:items-stretch font-roboto'
+        >
+            <Image
+                src='/images/logo.png'
+                width={500}
+                height={500}
+                alt='Logo Garage Vincent Parrot'
+                class='md:w-64 rounded-lg'
+            />
+            <p class='text-lg md:ml-10'>
                 Chez Garage Vincent Parrot, nous croyons que l'automobile est
-                bien plus qu'un simple moyen de transport.<br/> C'est une passion,
-                une extension de votre vie et un symbole de liberté. Notre
-                équipe d'experts est là pour vous accompagner dans tous vos
-                projets automobiles, qu'il s'agisse de l'entretien de votre
-                véhicule, de la réparation de carrosserie ou de la
-                personnalisation de votre voiture. <br/>
-                <strong>Notre engagement :</strong> Vous offrir un service
-                de qualité, adapté à vos besoins et à votre budget.
+                bien plus qu'un simple moyen de transport.<br /> C'est une passion,
+                une extension de votre vie et un symbole de liberté. Notre équipe
+                d'experts est là pour vous accompagner dans tous vos projets automobiles,
+                qu'il s'agisse de l'entretien de votre véhicule, de la réparation
+                de carrosserie ou de la personnalisation de votre voiture. <br
+                />
+                <strong>Notre engagement :</strong> Vous offrir un service de qualité,
+                adapté à vos besoins et à votre budget.
             </p>
         </section>
+        <section
+            class='my-10 flex flex-col gap-4 md:flex-row-reverse items-center md:items-stretch font-roboto'
+        >
+            <Image
+                src={mecanique}
+                width={400}
+                height={400}
+                alt='un mécanicien travaillant sur une voiture'
+                class='rounded-lg'
+            />
+            <p class='text-lg md:mr-10'>
+                Notre garage est bien plus qu'un endroit où l'on répare des
+                voitures.<br />
+                C'est un lieu où les moteurs chantent, où les problèmes sont résolus,
+                et où les rêves prennent forme. <br />
+                Que vous ayez besoin de notre service de mécanique pour redonner
+                vie à votre bolide ou de notre service de carrosserie pour lui rendre
+                sa splendeur d'antan, nous sommes là pour répondre à vos besoins
+                avec expertise et passion.
+            </p>
+        </section>
+    </article>
+    <article>
+        <h2 class='text-2xl font-semibold font-montserrat mb-4'>
+            <span class='underline underline-offset-4 decoration-red-500'
+                >L'expertise</span
+            > qui fait la différence.
+        </h2>
+        <section
+            class='flex flex-col gap-4 md:flex-row items-center md:items-stretch font-roboto'
+        >
+            <Image
+                src={carwash}
+                width={400}
+                height={400}
+                alt='un lavage de voiture'
+                class='rounded-lg'
+            />
+            <p class='text-lg md:ml-10'>
+                Notre équipe de mécaniciens et de spécialistes en carrosserie
+                est composée de passionné de l'automobile. Chacun d'entre nous
+                est fier de son rôle dans la préservation et l'amélioration de
+                votre véhicule. <br />
+                <strong>Notre engagement :</strong> Vous fournir des services de
+                la plus haute qualité, en utilisant les technologies les plus avancées
+                et les meilleures pratiques de l'industrie.
+            </p>
+        </section>
+        <section
+            class='my-10 flex flex-col gap-4 md:flex-row-reverse items-center md:items-stretch font-roboto'
+        >
+            <Image
+                src={route}
+                width={400}
+                height={400}
+                alt='une route'
+                class='rounded-lg'
+            />
+            <p class='text-lg md:mr-10'>
+                Pour nous, les voitures sont plus qu'un simple métier, elles
+                sont une passion qui nous anime. Nous organisons régulièrement
+                des événements et des rencontres pour les amateurs de voitures,
+                car nous croyons en la communauté automobile. Rejoignez-nous
+                pour partager votre amour des voitures et découvrez ce que
+                signifie vraiment être un propriétaire de voiture passionné.
+            </p>
+        </section>
+    </article>
+    <article>
+        <h2 class='text-2xl font-semibold font-montserrat mb-4'>
+            Votre
+            <span class='underline underline-offset-4 decoration-red-500'>
+                Satisfaction</span
+            >, notre Priorité.
+        </h2>
+        <section class="font-roboto">
+            <p class="text-lg">
+                Chez Garage Vincent Parrot, votre satisfaction est notre boussole.
+                Nous comprenons à quel point votre véhicule est important pour vous,
+                c'est pourquoi nous nous efforçons de dépasser vos attentes à chaque
+                visite. <br />
+                Notre approche personnalisée signifie que nous prenons le temps de vous
+                écouter, de comprendre vos besoins et de vous conseiller sur les meilleures
+                solutions pour votre véhicule.
+            </p>
+        </section>
+        <Carousel client:load/>
     </article>
 </PublicLayout>
