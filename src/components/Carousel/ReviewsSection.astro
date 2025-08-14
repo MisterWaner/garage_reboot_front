@@ -1,0 +1,36 @@
+---
+import ReviewsCarousel from './ReviewsCarousel';
+
+const reviews = [
+    {
+        id: 1,
+        name: 'John Doe',
+        title: 'Amazing Product!',
+        comment: 'This is a fantastic product!',
+        rating: 5,
+    },
+    {
+        id: 2,
+        name: 'Jane Smith',
+        title: 'Not What I Expected',
+        comment: "I wasn't impressed with the quality.",
+        rating: 2,
+    },
+    {
+        id: 3,
+        name: 'Alice Johnson',
+        title: 'Great Value',
+        comment: 'Great value for the price.',
+        rating: 4,
+    },
+];
+---
+
+<section class='my-10'>
+    <h2 class='text-2xl font-semibold font-montserrat mb-4'>
+        Ils nous ont fait <span
+            class='underline underline-offset-4 decoration-red-500'
+            >Confiance</span>.
+    </h2>
+    <ReviewsCarousel reviews={reviews} client:visible />
+</section>

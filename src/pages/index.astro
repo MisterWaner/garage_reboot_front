@@ -5,7 +5,7 @@ import carwash from '/src/assets/images/carwash.jpg';
 import route from '/src/assets/images/route.jpg';
 import PublicLayout from '../layouts/PublicLayout.astro';
 import BlurIntro from '../components/ui/BlurIntro.astro';
-import Carousel from '../components/Carousel/Carousel';
+import ReviewsSection from '../components/Carousel/ReviewsSection.astro';
 import '../styles/global.css';
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -68,7 +68,7 @@ import '../styles/global.css';
     <article>
         <h2 class='text-2xl font-semibold font-montserrat mb-4'>
             <span class='underline underline-offset-4 decoration-red-500'
-                >L'expertise</span
+                >L'Expertise</span
             > qui fait la différence.
         </h2>
         <section
@@ -129,6 +129,6 @@ import '../styles/global.css';
                 solutions pour votre véhicule.
             </p>
         </section>
-        <Carousel client:load/>
+        <ReviewsSection />
     </article>
 </PublicLayout>
