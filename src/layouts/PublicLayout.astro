@@ -1,6 +1,6 @@
 ---
 import Header from '../components/ui/Header.astro';
-
+import Footer from '../components/ui/Footer.astro';
 const { title } = Astro.props;
 ---
 
@@ -18,15 +18,20 @@ const { title } = Astro.props;
             href='https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap'
             rel='stylesheet'
         />
+        <script src="https://kit.fontawesome.com/e77906e29f.js" crossorigin="anonymous"></script>
     </head>
-    <body class="bg-slate-50">
+    <body class="bg-slate-50 flex flex-col min-h-screen">
         <Header />
 
-        <slot name="hero"/>
+        <div class="mt-[var(--header-height)]">
+            <slot name="hero"/>
+        </div>
 
-        <main class="relative top-36 mx-10 lg:mx-20 xl:mx-auto xl:max-w-7xl">
+        <main class="mx-10 lg:mx-20 xl:mx-auto xl:max-w-7xl flex-grow">
 			<slot />
 		</main>
+
+        <Footer />
     </body>
 </html>
 

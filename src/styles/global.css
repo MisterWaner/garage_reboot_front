@@ -1,5 +1,9 @@
 @import 'tailwindcss';
 
+:root {
+    --header-height: 8rem;
+}
+
 @theme {
     --font-montserrat: 'Montserrat', sans-serif;
     --font-roboto: 'Roboto', sans-serif;

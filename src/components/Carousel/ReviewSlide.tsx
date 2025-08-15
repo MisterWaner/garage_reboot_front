@@ -23,11 +23,10 @@ export default function ReviewSlide({ review }: { review: Review }) {
         return stars;
     };
     return (
-        <div className='mx-auto max-w-md p-6 bg-slate-50 rounded-xl shadow-lg text-center'>
-            <p className='font-semibold'>{review.name}</p>
-            <p className='text-semibold'>{review.title}</p>
-            <p className='text-sm'>{review.comment}</p>
-            <p className='text-bold'>{review.rating}</p>
+        <div className='mx-auto h-64 max-w-md flex flex-col justify-center p-6 bg-slate-50 rounded-xl shadow-lg text-center'>
+            <p className='font-bold text-xl'>{review.author}</p>
+            <p className='font-semibold'>{review.title}</p>
+            <p className='text-sm'>"{review.comment}"</p>
             <div className='flex justify-center mt-2'>{renderStars()}</div>
         </div>
     );

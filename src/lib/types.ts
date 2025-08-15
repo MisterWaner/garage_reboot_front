@@ -4,7 +4,7 @@ export type Link = {
 };
 
 export type Review = {
-    name: string;
+    author: string;
     title: string;
     rating: number;
     comment: string;
