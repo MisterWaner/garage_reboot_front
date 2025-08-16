@@ -1,8 +1,19 @@
 ---
 import PublicLayout from '../layouts/PublicLayout.astro';
+import Input from '../components/ui/Form/Input.astro';
+import Button from '../components/ui/Form/Button.astro';
 import '../styles/global.css';
 ---
 
-<PublicLayout title='Accès Professionnel'>
-    <h1>Connexion</h1>
+<PublicLayout title='Accès Professionnel' centered>
+    <h1
+        class='text-center text-2xl my-6 sm:text-3xl lg:text-5xl font-montserrat underline underline-offset-4 decoration-red-500'
+    >
+        Connexion
+    </h1>
+    <form action="" class="w-full mt-10 max-w-xl mx-auto space-y-6">
+        <Input label="Email" name="email" type="email" id="email" placeholder="john@example.com" required={true} />
+        <Input label="Mot de passe" name="password" type="password" id="password" placeholder="votre mot de passe" required={true} />
+        <Button label="Se connecter" type="submit" />
+    </form>
 </PublicLayout>

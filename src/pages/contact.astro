@@ -1,8 +1,24 @@
 ---
 import PublicLayout from '../layouts/PublicLayout.astro';
+import Input from '../components/ui/Form/Input.astro';
+import Button from '../components/ui/Form/Button.astro';
+import Textarea from '../components/ui/Form/Textarea.astro';
+
 import '../styles/global.css';
 ---
 
-<PublicLayout title='Contact'>
-    <h1>Contact</h1>
+<PublicLayout title='Contact' centered>
+    <h1
+        class='text-center text-2xl my-6 sm:text-3xl lg:text-5xl font-montserrat underline underline-offset-4 decoration-red-500'
+    >
+        Contact
+    </h1>
+    <form action="" class="w-full mt-10 max-w-xl mx-auto space-y-6">
+        <Input label="Nom" name="lastname" id="lastname" type="text" placeholder="Oddinson" required={true}/>
+        <Input label="Prénom" name="firstname" id="firstname" type="text" placeholder="Thor" required={true}/>
+        <Input label="Email" name="email" id="email" type="email" placeholder="thor@example.com" required={true}/>
+        <Input label="Téléphone" name="phone" id="phone" type="tel" placeholder="0123456789" required={true}/>
+        <Textarea label="Message" name="message" id="message" placeholder="Votre message" required={true} />
+        <Button label="Envoyer" type="submit" />
+    </form>
 </PublicLayout>
